@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  export default{
+    components:{
+      Home;
+    }
+  }
+</script>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Collector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">Pokemon Collector</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li activeClass="active"><a href="/collection">Collection</a></li>
+                    <li activeClass="active"><a href="/store">Pokemon Store</a></li>
+                </ul>
+                <strong class="navbar-text navbar-right">Pokemon: 0</strong>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown open">
+                        <a
+                                href="#"
+                                class="dropdown-toggle"
+                                data-toggle="dropdown"
+                                role="button"
+                                aria-haspopup="true"
+                                aria-expanded="false">Save & Load <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Save Data</a></li>
+                            <li><a href="#">Load Data</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <h1>Gotta Catch Em All</h1>
+                    <h6>You may Save & Load your Data</h6>
+                    <h6>Click Collection to see your Pokemon</h6>
+                    <h6>Click Pokemon to get more Pokemon</h6>
+                    <hr>
+                    <p>Total Pokemon Collected: 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
