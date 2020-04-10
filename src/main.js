@@ -3,18 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
+import Vuex from 'vuex';
+
 import Home from './components/Home.vue';
 import Collection from './components/Collection.vue';
 import Store from './components/Store.vue';
-import VueResource from 'vue-resource';
-import Vuex from 'vuex';
+
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.config.productionTip = false
 
-export const store = new Vuex.Store({
+var store = new Vuex.Store({
     state: {
+      count: 0,
       storearray: [{name:'squirtle',
                     level: 1,
                     type: 'info',
@@ -37,19 +40,17 @@ export const store = new Vuex.Store({
     mutations:{
       addPokemon: state => {
         return state.collectionarray.push(4);
+      },
+      increment: (state) => {
+        state.count++
+      },
+      decrement: (state) => {
+        state.count--
       }
     },
 
 
 })
-
-
-
-
-
-
-
-
 
 const routes = [
   {
@@ -59,6 +60,11 @@ const routes = [
   },
   {
     path: "/",
+    name: "Home",
+    component: Home
+  },
+  {
+    path: "/Home",
     name: "Home",
     component: Home
   },
@@ -84,6 +90,7 @@ export default router
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

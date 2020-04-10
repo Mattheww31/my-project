@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-      <div class="col-xs-12">
+<!--       <div class="col-xs-12">
           <div>
               <h1>Gotta Catch Em All</h1>
               <h6>You may Save & Load your Data</h6>
@@ -9,12 +9,32 @@
               <hr>
               <p>Total Pokemon Collected: 0</p>
           </div>
-      </div>
+      </div> -->
+      HOME {{count}}
+      <button v-on:click="increment">+</button>
+      <button v-on:click="decrement">-</button>
   </div>
 </template>
-<script>
 
+<script>
+export default {
+  name: 'Home',
+  methods:{
+    increment: function(){
+      this.$store.commit("increment")
+    },
+    decrement: function(){
+      this.$store.commit("decrement")
+    }
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  }
+}
 </script>
+
 <style>
 
 </style>
